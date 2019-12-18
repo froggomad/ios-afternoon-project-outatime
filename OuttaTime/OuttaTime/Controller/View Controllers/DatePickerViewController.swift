@@ -8,14 +8,33 @@
 
 import UIKit
 
+protocol DatePickerDelegate {
+    func destinationDateWasChosen(date: Date)
+}
+
 class DatePickerViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    //MARK: IBOutlets
+    @IBOutlet weak var pickerView: UIPickerView!
+    
+    
+    //MARK: IBActions
+    @IBAction func cancelBtnTapped(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func saveBtnTapped(_ sender: UIButton) {
+        //delegate?.destinationDateWasChosen(date: date)
+    }
+    
+    //MARK: Class Variables
+    var delegate: DatePickerDelegate?
+    
+    //MARK: View Lifecycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        pickerView.delegate = self
+        // Do any additional setup after loading the view.
+    }
 
     /*
     // MARK: - Navigation
@@ -27,4 +46,22 @@ class DatePickerViewController: UIViewController {
     }
     */
 
+}
+
+extension DatePickerViewController: UIPickerViewDelegate {
+    
+}
+
+extension DatePickerViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        #warning("Set This")
+        return 0
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        #warning("Set This")
+        return 0
+    }
+    
+    
 }
