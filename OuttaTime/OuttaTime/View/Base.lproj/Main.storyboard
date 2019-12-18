@@ -125,7 +125,26 @@
                     <view key="view" contentMode="scaleToFill" id="gkg-KE-ik0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUT-IL-mHL">
+                                <rect key="frame" x="0.0" y="345" width="414" height="216"/>
+                            </pickerView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="18v-eA-2wc">
+                                <rect key="frame" x="0.0" y="818" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="Sbn-Pm-RFl" userLabel="Cancel"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="rbK-ri-Ufx"/>
+                                    <barButtonItem title="Save" id="ilj-0S-opN" userLabel="Save"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gUT-IL-mHL" firstAttribute="centerX" secondItem="IQf-Zj-4OX" secondAttribute="centerX" id="JUY-Ls-BvE"/>
+                            <constraint firstItem="gUT-IL-mHL" firstAttribute="width" secondItem="gkg-KE-ik0" secondAttribute="width" id="L72-o4-N6n"/>
+                            <constraint firstItem="gUT-IL-mHL" firstAttribute="centerY" secondItem="IQf-Zj-4OX" secondAttribute="centerY" id="Q3M-y3-sTN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="IQf-Zj-4OX"/>
                     </view>
                 </viewController>
