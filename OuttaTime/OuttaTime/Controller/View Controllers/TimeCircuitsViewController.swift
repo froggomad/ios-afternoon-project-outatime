@@ -61,8 +61,9 @@ class TimeCircuitsViewController: UIViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "" {
+        if segue.identifier == "DatePickerVCSegue" {
             if let destination = segue.destination as? DatePickerViewController {
+                print("assigning picker delegate")
                 destination.delegate = self
             }
         }

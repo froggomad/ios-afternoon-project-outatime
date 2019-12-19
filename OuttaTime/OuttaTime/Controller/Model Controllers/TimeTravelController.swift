@@ -25,7 +25,6 @@ class TimeTravelController {
     }
     
     func startTimer() {
-        print("creating and starting timer")
         createTimer()
         timer?.fire()
     }

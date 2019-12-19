@@ -23,15 +23,21 @@ class DatePickerViewController: UIViewController {
     }
     
     @IBAction func saveBtnTapped(_ sender: UIButton) {
-        //delegate?.destinationDateWasChosen(date: date)
+        guard let date = date else {
+            AlertController.showBasicAlert(title: "Oops!", message: "Please Choose a Date", vc: self)
+            return
+        }
+        delegate?.destinationDateWasChosen(date: date)
+        self.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Class Variables
     var delegate: DatePickerDelegate?
-    
+    var timeMachine: TimeTravelController?
+    var date: Date?
     
     //MARK: Picker Data
-    lazy private var countdownPickerData: [[String]] = {
+    lazy private var pickerData: [[String]] = {
         let months: [String] = [
             "Jan",
             "Feb",
@@ -74,7 +80,7 @@ class DatePickerViewController: UIViewController {
 
 extension DatePickerViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let components = countdownPickerData[component]
+        let components = pickerData[component]
         let dateValue = components[row]
         return dateValue
     }
@@ -82,15 +88,40 @@ extension DatePickerViewController: UIPickerViewDelegate {
         func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
             100
         }
+    
+        func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         //m,d,y (0,1,2)
+            var month = "Jan"
+            var day = 1
+            var year = "1943"
+            switch component {
+            case 0:
+                month = pickerData[0][row]
+            case 1:
+                day = row + 1
+            case 2:
+                let thisYear = pickerData[2][row]
+                year = thisYear
+            default:
+                break
+            }
+            let dateString = "\(month) \(day) \(year)"
+            print(dateString)
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "MMM dd yyyy"
+            dateFormatter.locale = Locale.init(identifier: "en_US")
+            let date = dateFormatter.date(from: dateString)
+            self.date = date
+        }
 }
 
 extension DatePickerViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return countdownPickerData.count
+        return pickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return countdownPickerData[component].count
+        return pickerData[component].count
     }
     
     
