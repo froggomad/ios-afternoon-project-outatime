@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TimeTravelDelegate {
+    func checkSpeed(speed: Int)
+    func timerDidUpdate()
+}
+
 class TimeCircuitsViewController: UIViewController {
     //MARK: IBOutlets
     @IBOutlet weak var destinationTimeLbl: UILabel!
@@ -17,7 +22,7 @@ class TimeCircuitsViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func travelBackBtn(_ sender: UIButton) {
-        
+        timeMachine?.resetTimer()
     }
     
     //MARK: Class Variables
@@ -32,14 +37,24 @@ class TimeCircuitsViewController: UIViewController {
     
     var speed: Int = 0
     
+    var timeMachine: TimeTravelController?
+    
     //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        //setup initial view
+        #warning("Use setupViewsMethod")
         navigationController?.navigationBar.isHidden = true
         let date = Date(timeIntervalSinceNow: 0)
         speedLbl.text = "\(speed) MPH"
         timeDepartedLbl.text = "--- --, ----"
-        presentTimeLbl.text = dateFormatter.string(from: date)
+        presentTimeLbl.text = dateFormatter.string(from: date)        
+        //create TimeTravelController
+        self.timeMachine = TimeTravelController()
+        //MARK: Testing
+        timeMachine?.delegate = self
+        timeMachine?.startTimer()
+        
     }
     
 
@@ -60,6 +75,23 @@ class TimeCircuitsViewController: UIViewController {
 extension TimeCircuitsViewController: DatePickerDelegate {
     func destinationDateWasChosen(date: Date) {
         self.destinationTimeLbl.text = dateFormatter.string(from: date)
+    }
+}
+
+extension TimeCircuitsViewController: TimeTravelDelegate {
+    func checkSpeed(speed: Int) {
+        if speed >= 88 {
+            print("speed reached, portal opened")
+            timeMachine?.resetTimer()
+        } else {
+            self.speed += 1
+            print("We're speeding up to 88 so we can make a portal!")
+        }
+    }
+    
+    func timerDidUpdate() {
+        checkSpeed(speed: speed)
+        print("delegate started me")
     }
     
     

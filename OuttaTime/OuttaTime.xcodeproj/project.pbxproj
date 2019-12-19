@@ -16,6 +16,7 @@
 		B9F63AEF23AAC85800640406 /* OuttaTimeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63AEE23AAC85800640406 /* OuttaTimeUITests.swift */; };
 		B9F63B0523AAC91500640406 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63B0423AAC91500640406 /* DatePickerViewController.swift */; };
 		B9F63B0723AAC93500640406 /* TimeCircuitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63B0623AAC93500640406 /* TimeCircuitsViewController.swift */; };
+		B9F63B0D23AAE22200640406 /* TimeTravelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63B0C23AAE22200640406 /* TimeTravelController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		B9F63AF023AAC85800640406 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9F63B0423AAC91500640406 /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		B9F63B0623AAC93500640406 /* TimeCircuitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCircuitsViewController.swift; sourceTree = "<group>"; };
+		B9F63B0C23AAE22200640406 /* TimeTravelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTravelController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 		B9F63AFF23AAC87F00640406 /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B9F63B0C23AAE22200640406 /* TimeTravelController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F63B0D23AAE22200640406 /* TimeTravelController.swift in Sources */,
 				B9F63B0523AAC91500640406 /* DatePickerViewController.swift in Sources */,
 				B9F63ACD23AAC85600640406 /* AppDelegate.swift in Sources */,
 				B9F63B0723AAC93500640406 /* TimeCircuitsViewController.swift in Sources */,
