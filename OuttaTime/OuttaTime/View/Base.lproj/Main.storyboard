@@ -108,7 +108,6 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <variation key="heightClass=compact-widthClass=compact"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +142,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gUT-IL-mHL">
-                                <rect key="frame" x="0.0" y="296" width="453" height="216"/>
+                                <rect key="frame" x="0.0" y="296" width="414" height="216"/>
                             </pickerView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="240" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-zJ-DJP">
                                 <rect key="frame" x="41" y="778" width="332" height="30"/>
@@ -165,7 +164,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gUT-IL-mHL" firstAttribute="centerX" secondItem="IQf-Zj-4OX" secondAttribute="centerX" id="JUY-Ls-BvE"/>
                             <constraint firstItem="gUT-IL-mHL" firstAttribute="width" secondItem="gkg-KE-ik0" secondAttribute="width" id="L72-o4-N6n"/>

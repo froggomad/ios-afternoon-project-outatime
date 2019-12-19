@@ -79,10 +79,13 @@ class DatePickerViewController: UIViewController {
 }
 
 extension DatePickerViewController: UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         let components = pickerData[component]
         let dateValue = components[row]
-        return dateValue
+        let range = (dateValue as NSString).range(of: dateValue) //create a range of the String to change color of
+        let nsDateString = NSMutableAttributedString(string: dateValue) //make string an NSMutableString
+        nsDateString.addAttributes([.foregroundColor : UIColor.systemBackground], range: range) //add color attribute
+        return nsDateString
     }
     
         func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
