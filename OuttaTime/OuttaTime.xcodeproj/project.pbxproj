@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B992108923AAFBAC00FD402B /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B992108823AAFBAC00FD402B /* AlertController.swift */; };
 		B9F63ACD23AAC85600640406 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63ACC23AAC85600640406 /* AppDelegate.swift */; };
 		B9F63ACF23AAC85600640406 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F63ACE23AAC85600640406 /* SceneDelegate.swift */; };
 		B9F63AD423AAC85600640406 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9F63AD223AAC85600640406 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B992108823AAFBAC00FD402B /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		B9F63AC923AAC85600640406 /* OuttaTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OuttaTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9F63ACC23AAC85600640406 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9F63ACE23AAC85600640406 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				B9F63B0C23AAE22200640406 /* TimeTravelController.swift */,
+				B992108823AAFBAC00FD402B /* AlertController.swift */,
 			);
 			path = "Model Controllers";
 			sourceTree = "<group>";
@@ -317,6 +320,7 @@
 				B9F63B0523AAC91500640406 /* DatePickerViewController.swift in Sources */,
 				B9F63ACD23AAC85600640406 /* AppDelegate.swift in Sources */,
 				B9F63B0723AAC93500640406 /* TimeCircuitsViewController.swift in Sources */,
+				B992108923AAFBAC00FD402B /* AlertController.swift in Sources */,
 				B9F63ACF23AAC85600640406 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

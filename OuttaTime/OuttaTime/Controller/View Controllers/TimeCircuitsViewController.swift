@@ -22,7 +22,7 @@ class TimeCircuitsViewController: UIViewController {
     
     //MARK: IBActions
     @IBAction func travelBackBtn(_ sender: UIButton) {
-        timeMachine?.resetTimer()
+        timeMachine?.startTimer()
     }
     
     //MARK: Class Variables
@@ -53,8 +53,6 @@ class TimeCircuitsViewController: UIViewController {
         self.timeMachine = TimeTravelController()
         //MARK: Testing
         timeMachine?.delegate = self
-        timeMachine?.startTimer()
-        
     }
     
 
@@ -84,6 +82,11 @@ extension TimeCircuitsViewController: TimeTravelDelegate {
             speedLbl.text = "\(speed) MPH"
             print("speed reached, portal opened")
             timeMachine?.resetTimer()
+            timeDepartedLbl.text = presentTimeLbl.text
+            presentTimeLbl.text = destinationTimeLbl.text
+            self.speed = 0
+            guard let presentTimeText = presentTimeLbl.text else {return}
+            AlertController.showBasicAlert(title: "Time Travel Successful", message: "Your new date is \(presentTimeText)", vc: self)
         } else {
             self.speed += 1
             speedLbl.text = "\(speed) MPH"
@@ -93,7 +96,6 @@ extension TimeCircuitsViewController: TimeTravelDelegate {
     
     func timerDidUpdate() {
         checkSpeed(speed: speed)
-        print("delegate started me")
     }
     
     

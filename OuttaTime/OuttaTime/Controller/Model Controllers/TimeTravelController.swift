@@ -32,6 +32,4 @@ class TimeTravelController {
         timer = nil
     }
     
-    
-    
 }
