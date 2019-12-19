@@ -17,6 +17,8 @@ class TimeTravelController {
         timer = Timer(timeInterval: 0.1, repeats: true, block: { _ in
             self.delegate?.timerDidUpdate()
         })
+        guard let timer = timer else {return}
+        RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
     }
     
     func startTimer() {

@@ -81,10 +81,12 @@ extension TimeCircuitsViewController: DatePickerDelegate {
 extension TimeCircuitsViewController: TimeTravelDelegate {
     func checkSpeed(speed: Int) {
         if speed >= 88 {
+            speedLbl.text = "\(speed) MPH"
             print("speed reached, portal opened")
             timeMachine?.resetTimer()
         } else {
             self.speed += 1
+            speedLbl.text = "\(speed) MPH"
             print("We're speeding up to 88 so we can make a portal!")
         }
     }
