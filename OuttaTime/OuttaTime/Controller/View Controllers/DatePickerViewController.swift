@@ -29,10 +29,34 @@ class DatePickerViewController: UIViewController {
     //MARK: Class Variables
     var delegate: DatePickerDelegate?
     
+    
+    //MARK: Picker Data
+    lazy private var countdownPickerData: [[String]] = {
+        let months: [String] = [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sept",
+            "Oct",
+            "Nov",
+            "Dec"
+        ]
+        let days: [String] = Array(1...31).map {String($0)}
+        let years: [String] = Array(1943...2019).map {String($0)}
+        let pickerComponents: [[String]] = [months, days, years]
+        return pickerComponents
+    }()
+    
     //MARK: View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.delegate = self
+        pickerView.dataSource = self
         // Do any additional setup after loading the view.
     }
 
@@ -49,18 +73,24 @@ class DatePickerViewController: UIViewController {
 }
 
 extension DatePickerViewController: UIPickerViewDelegate {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let components = countdownPickerData[component]
+        let dateValue = components[row]
+        return dateValue
+    }
     
+        func pickerView(_ pickerView: UIPickerView, widthForComponent component: Int) -> CGFloat {
+            100
+        }
 }
 
 extension DatePickerViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        #warning("Set This")
-        return 0
+        return countdownPickerData.count
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        #warning("Set This")
-        return 0
+        return countdownPickerData[component].count
     }
     
     
