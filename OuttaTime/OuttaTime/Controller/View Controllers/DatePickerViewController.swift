@@ -107,8 +107,7 @@ extension DatePickerViewController: UIPickerViewDelegate {
             case 1:
                 day = row + 1
             case 2:
-                let thisYear = pickerData[2][row]
-                year = thisYear
+                year = pickerData[2][row]
             default:
                 break
             }
