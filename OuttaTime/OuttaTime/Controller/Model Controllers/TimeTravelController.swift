@@ -21,7 +21,6 @@ class TimeTravelController {
             guard let timer = timer else {return}
             RunLoop.main.add(timer, forMode: RunLoop.Mode.default)
         }
-        
     }
     
     func startTimer() {

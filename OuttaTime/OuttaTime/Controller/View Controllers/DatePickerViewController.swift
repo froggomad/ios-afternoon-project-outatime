@@ -36,6 +36,11 @@ class DatePickerViewController: UIViewController {
     var timeMachine: TimeTravelController?
     var date: Date?
     
+    //MARK: construct date
+    private var month = ""
+    private var day = Int()
+    private var year = ""
+    
     //MARK: Picker Data
     lazy private var pickerData: [[String]] = {
         let months: [String] = [
@@ -92,11 +97,10 @@ extension DatePickerViewController: UIPickerViewDelegate {
             100
         }
     
+    
         func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
          //m,d,y (0,1,2)
-            var month = "Jan"
-            var day = 1
-            var year = "1943"
+            
             switch component {
             case 0:
                 month = pickerData[0][row]
@@ -107,6 +111,15 @@ extension DatePickerViewController: UIPickerViewDelegate {
                 year = thisYear
             default:
                 break
+            }
+            if month == "" {
+                month = "Jan"
+            }
+            if day == Int() {
+                day = 1
+            }
+            if year == "" {
+                year = "1943"
             }
             let dateString = "\(month) \(day) \(year)"
             print(dateString)

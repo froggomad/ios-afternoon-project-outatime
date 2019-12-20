@@ -43,7 +43,6 @@ class TimeCircuitsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         //setup initial view
-        #warning("Use setupViewsMethod")
         navigationController?.navigationBar.isHidden = true
         let date = Date(timeIntervalSinceNow: 0)
         speedLbl.text = "\(speed) MPH"
@@ -79,6 +78,9 @@ extension TimeCircuitsViewController: DatePickerDelegate {
 
 extension TimeCircuitsViewController: TimeTravelDelegate {
     func checkSpeed(speed: Int) {
+        
+        
+        
         if speed >= 88 {
             speedLbl.text = "\(speed) MPH"
             print("speed reached, portal opened")
